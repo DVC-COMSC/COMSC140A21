@@ -2,7 +2,7 @@ def main():
     """
     ##################################################
     Comlete your code here
-    Use m_perc and f_perc for your results
+    Use m_perc, f_perc, and nb_perc for your results
     ##################################################
     """
 
@@ -11,7 +11,7 @@ def main():
     # Do not delete the return statement
     ########################################
     """
-    return m_perc, f_perc
+    return m_perc, f_perc, nb_perc
 
 
 if __name__ == '__main__':
