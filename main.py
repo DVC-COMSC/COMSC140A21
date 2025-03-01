@@ -1,10 +1,13 @@
 def main():
     """
     ##################################################
-    Comlete your code here
-    Use m_perc, f_perc, and nb_perc for your results
+    get three inputs from the user
+    calculate the percentage of each input
+    Use m_perc, f_perc and nb_perc for your results
     ##################################################
     """
+
+    # Complete your code here.
 
     """
     ########################################

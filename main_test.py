@@ -7,10 +7,10 @@ import re
 def test_main_1():
     captureOut = io.StringIO()
     sys.stdout = captureOut
-    datastr = '40 \n 60'
+    datastr = '20 \n 60 \n 20'
     sys.stdin = io.StringIO(datastr)
 
-    m_perc, f_perc = main.main()
+    m_perc, f_perc, nb_perc = main.main()
     sys.stdout = sys.__stdout__
     print('Captured ', captureOut.getvalue())
     lines = captureOut.getvalue().split('\n')
@@ -21,17 +21,19 @@ def test_main_1():
     # print(res.group())
     m = f'{m_perc:.2f}'
     f = f'{f_perc:.2f}'
-    assert m == '40.00', 'Expect 40.00'
-    assert f == '60.00', 'Expect 40.00'
+    nb = f'{nb_perc:.2f}'
+    assert m == '20.00', 'Expect 20.00'
+    assert f == '60.00', 'Expect 60.00'
+    assert nb == '20.00', 'Expect 20.00'
 
 
 def test_main_2():
     captureOut = io.StringIO()
     sys.stdout = captureOut
-    datastr = '10 \n 20'
+    datastr = '10 \n 20 \n 10'
     sys.stdin = io.StringIO(datastr)
 
-    m_perc, f_perc = main.main()
+    m_perc, f_perc, nb_perc = main.main()
     sys.stdout = sys.__stdout__
     print('Captured ', captureOut.getvalue())
     lines = captureOut.getvalue().split('\n')
@@ -42,5 +44,7 @@ def test_main_2():
     # print(res.group())
     m = f'{m_perc:.2f}'
     f = f'{f_perc:.2f}'
-    assert m == '33.33', 'Expect 33.33'
-    assert f == '66.67', 'Expect 66.67'
+    nb = f'{nb_perc:.2f}'
+    assert m == '25.00', 'Expect 25.00'
+    assert f == '50.00', 'Expect 50.00'
+    assert nb == '25.00', 'Expect 25.00'
